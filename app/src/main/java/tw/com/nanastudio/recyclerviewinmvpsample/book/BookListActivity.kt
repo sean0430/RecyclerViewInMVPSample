@@ -34,7 +34,7 @@ class BookListActivity : AppCompatActivity(), BookListContract.View {
         tvBooks.hasFixedSize()
         val linearLayoutManager = LinearLayoutManager(this)
         tvBooks.layoutManager = linearLayoutManager
-        val adapter = RvBookListAdapter(bookList)
+        val adapter = RvBookListAdapter(presenter)
         tvBooks.adapter = adapter
     }
 }

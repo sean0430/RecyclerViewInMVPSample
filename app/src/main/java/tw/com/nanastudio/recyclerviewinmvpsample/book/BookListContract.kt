@@ -8,14 +8,22 @@ import tw.com.nanastudio.recyclerviewinmvpsample.data.Book
  * RecyclerViewInMVPSample
  * Created by Sean Lin on 2018/4/7 3:46 PM.
  */
-interface BookListContract{
+interface BookListContract {
 
-    interface View:BaseView<Presenter>{
+    interface View : BaseView<Presenter> {
         fun showBooks(bookList: List<Book>)
     }
 
-    interface Presenter:BasePresenter {
+    interface Presenter : BasePresenter {
         fun loadBook()
+
+        fun getBookListCount(): Int
+
+        fun onBindViewHolder(bookItemView: BookItemView,position:Int)
+    }
+
+    interface BookItemView {
+        fun bindData(book: Book)
     }
 
 }
